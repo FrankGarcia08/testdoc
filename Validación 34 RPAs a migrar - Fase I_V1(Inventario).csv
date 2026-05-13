@@ -1,0 +1,99 @@
+#;Nombre del proceso;Año de implementación;Área;Área FNA;Nombre de persona encargada;Correo electronico;Módulo;Funcionalidad;Descripción del proceso;Lugar donde se ejecuta;Datos que consume (Tipo);Fuente de datos que consume;Integraciones con otros sistemas;Observaciones internas
+1;Marcación Mi Casa Ya;2021;Legalizadora;Gerencia Legalizadora;Miguel Angel Aldana Arias;maldana@fna.gov.co;Trans Unión;Automatización del proceso de marcación en la plataforma CIFIN del producto Mi Casa Ya;"Ingreso a la página de transunión, consulta por cédula para generación de marcación, marcación, generación de archivo txt
+
+El robot toma una base de datos en Excel y, registro por registro, realiza la marcación o consulta correspondiente en el portal de Transunion. Al finalizar, genera un archivo TXT que indica si el proceso fue exitoso, si hubo errores o qué se debe corregir. El proceso abarca la marcación de subsidios, consultas de inscripción y generación de respuestas.";"GLE-CNA-02-2714 - GLE-CNA-02-3301
+
+En un computador específico de la gerencia legalizadora (asignado a Miguel Aldana)";"Datos personales finacieros y crediticios
+
+Bases de datos en Excel (insumo) y genera archivos de texto (TXT) como resultado de la validación";"Listas de excel
+
+Una base de datos en Excel suministrada por el área";"web - Excel
+
+Se integra principalmente con el portal web de Transunion (CIFIN) para realizar las marcaciones y consultas";"Se debe solicitar ejemplo del archivo excel (estructura campos del archivo), pagina web (URL de Trans Union (CIFIN)) ruta para ejecución, indicar si se utiliza un usuario especifico para el FNA en la página.
+
+Nota: Estos programas de subsidios no están vigentes actualmente, por lo que el bot no se está ejecutando. No obstante validando con el area consideran que el Bot se debe mantener dado que se puede presentar la reactivación."
+2;Reserva CIFIN;2021;Legalizadora;Gerencia Legalizadora;Miguel Angel Aldana Arias;maldana@fna.gov.co;Trans Unión;El asistente robótico está diseñado para optimizar la gestión de coberturas de vivienda mediante la interacción automatizada con la plataforma TransUnion, donde realiza la validación de beneficiarios y la detección de marcaciones previas para evitar duplicidad de registros. Su funcionalidad principal radica en la capacidad de procesar grandes volúmenes de datos de forma precisa, encargándose de diligenciar campos críticos como valores de desembolso, sistemas de amortización y ubicación geográfica, para luego ejecutar la reserva y confirmación técnica de la marcación FRECH. Finalmente, el robot asegura la trazabilidad de la operación al generar reportes automáticos de éxito o error y gestionar copias de seguridad de los insumos, eliminando la carga operativa manual y reduciendo el riesgo de errores en el reporte de información financiera.;"El proceso de automatización Marcación Reserva Cifin inicia con la validación y respaldo de un archivo de insumo, tras lo cual el robot accede a la plataforma TransUnion en el módulo de Cobertura Condicionada FRECH para procesar cada registro mediante el ingreso de las cédulas de los beneficiarios. El asistente verifica si el usuario ya posee una marcación previa; de ser así, genera una alerta y continúa con el siguiente caso, pero si no la tiene, procede a diligenciar automáticamente los datos financieros y de vivienda (como valores, fechas, plazos y ubicación) para ejecutar la reserva y confirmación de la marcación. Finalmente, el robot captura los detalles de la transacción exitosa o registra las fallas en un archivo de salida consolidado que se abre automáticamente al terminar la ejecución.";"GLE-CNA-02-2714 - GLE-CNA-02-3301
+
+En un computador específico de la gerencia legalizadora (asignado a Miguel Aldana)";"Datos personales finacieros y crediticios
+
+Bases de datos en Excel (insumo) y genera archivos de texto (TXT) como resultado de la validación";"Listas de excel
+
+Una base de datos en Excel suministrada por el área";"web
+
+Se integra principalmente con el portal web de Transunion (CIFIN) para realizar las marcaciones y consultas";"Se debe solicitar ejemplo del archivo excel (estructura campos del archivo), pagina web (URL de Trans Union (CIFIN)) ruta para ejecución, indicar si se utiliza un usuario especifico para el FNA en la página.
+
+Nota: Estos programas de subsidios no están vigentes actualmente, por lo que el bot no se está ejecutando. No obstante validando con el area consideran que el Bot se debe mantener dado que se puede presentar la reactivación."
+3;Consulta cobertura condicionada;2021;Legalizadora;Gerencia Legalizadora;Miguel Angel Aldana Arias;maldana@fna.gov.co;Trans Unión;Automatizar el proceso de marcación de desembolso de crédito cobertura condicionada [Frech];"El proceso de la Consulta de Cobertura Condicionada comienza con la validación de un archivo de insumo y la creación de una copia de respaldo para garantizar la integridad de los datos. Posteriormente, el robot accede a la plataforma TransUnion, ingresa al módulo de ""Vivienda - Cobertura Condicionada FRECH"" y realiza una búsqueda individual por número de cédula para cada registro. Durante la consulta, el asistente verifica si existe una marcación; de ser así, extrae información detallada como el número de reserva, la entidad financiera y la fecha, comparándola con los parámetros configurados. Finalmente, todos los resultados se consolidan en un archivo de salida que el sistema abre automáticamente al concluir el procesamiento de todos los casos para su revisión inmediata.";"GLE-CNA-02-2714 - GLE-CNA-02-3301
+
+En un computador específico de la gerencia legalizadora (asignado a Miguel Aldana)";"Datos personales finacieros y crediticios
+
+Bases de datos en Excel (insumo) y genera archivos de texto (TXT) como resultado de la validación";"Listas de excel
+
+Una base de datos en Excel suministrada por el área";"web
+
+Se integra principalmente con el portal web de Transunion (CIFIN) para realizar las marcaciones y consultas";"Se debe solicitar ejemplo del archivo excel (estructura campos del archivo), pagina web (URL de Trans Union (CIFIN)) ruta para ejecución, indicar si se utiliza un usuario especifico para el FNA en la página.
+
+Nota: Estos programas de subsidios no están vigentes actualmente, por lo que el bot no se está ejecutando. No obstante validando con el area consideran que el Bot se debe mantener dado que se puede presentar la reactivación."
+7;Relación de universidades y constructoras;2022;Tesorería;Gerencia de Tesoreria;"Maria Julieta Malagon Guzman
+Jorge Ivan Duque Gomez
+
+Ana Sofia Quiroz Aponte";"Mmalagon@fna.gov.co
+JDuque@fna.gov.co
+
+Aquiroz@fna.gov.co";SAP Excel Outlook;El proceso es de consulta de estado de giros a las entidades de acuerdo con las solicitudes que se hacen por correo, el cual se estandarizará para enviar las universidades con mayor recurrencia de esta información, se envía por medio de correo electrónico el archivo;"Lectura insumo de pagos a consultar, ingreso a SAP, ingreso a transacción de consulta de giros, descarga estado de cuenta de cada constructora y universidad, organización y disposición del archivo para envío de estado de cuenta, envío de información a través de outlook.
+
+El robot descarga diariamente, a través de una transacción de SAP, todos los pagos realizados a universidades y constructoras el día hábil anterior. Posteriormente, filtra esta información por los correos electrónicos (principal y suplente) previamente establecidos y validados con seguridad de la información para cada entidad. Finalmente, utiliza una plantilla de mensajería para enviar automáticamente la relación de pagos adjunta a cada universidad. Este proceso evita que el personal de tesorería tenga que descargar manualmente órdenes de pago individuales, lo cual tomaba de 2 a 3 minutos por cada una.";"GTE-TCC-02-2563
+GTE-TCC-02-3081
+GTE-TCC-02-3239
+GTE-TCC-02-3662
+GTE-TCC-02-3670
+GTE-TCC-02-3839
+GTE-TCC-02-3850
+GTE-TCC-02-4228
+GTE-TCC-02-4687
+
+Se ejecuta directamente en la máquina del funcionario que tiene asignada la tarea, utilizando su usuario y contraseña de SAP2. Actualmente, hay dos funcionarios configurados con los permisos necesarios para ejecutar este bot2.
+";"Nit, nombre de entidad, correo
+
+Consume datos de pagos (registros financieros), direcciones de correo electrónico de contacto de las universidades y plantillas de texto para el cuerpo del mensaje.";"Listas de excel - Sap
+
+La fuente principal es el sistema SAP, específicamente a través de la transacción ZF 039";"Excel
+Sap
+
+Se integra con el sistema SAP para la extracción de datos y con el sistema de correo electrónico para la mensajería y envío de archivos.";Se debe solicitar ejemplo del archivo excel (estructura campos del archivo).
+11;Descarga de archivos desde SAP - Control de Cambios Giros SAP;2021;Tesorería;Gerencia de Tesoreria;"Leidy Viviana Espinosa Fula
+Yenny Alejandra Garcia Arcila
+Alejandro Alberto Arias Mora
+
+Ana Sofia Quiroz Aponte";"lvespinosa@fna.gov.co
+YAGarcia@fna.gov.co
+aariasm@fna.gov.co
+
+Aquiroz@fna.gov.co";SAP Outlook;El proceso consiste en la generación y descarga de los archivos de pagos (giros) desde SAP que se encuentran en estado aprobado presupuestado para su posterior cargue a los diferentes portales bancarios;"La automatización Descarga de archivos de giros desde SAP, desarrollada en Agility Studio para el área de Tesorería del Fondo Nacional del Ahorro, tiene como objetivo ingresar al sistema SAP, parametrizar y ejecutar propuestas de pago (transacción F110 – Pagos Automáticos), generar los giros correspondientes y descargar los archivos resultantes para su posterior cargue en los portales bancarios. El proceso inicia cuando el usuario ejecuta el Menú Agility, ingresa credenciales y selecciona las propuestas a generar; posteriormente el RPA valida archivos de configuración, navega en SAP hasta el módulo de pagos automáticos, parametriza sociedad, vías de pago, cuentas de acreedores, criterios de selección (incluyendo clase de documento), configura determinación de bancos y jerarquía de sociedad pagadora, ejecuta la propuesta, valida su creación y estado, realiza la ejecución inmediata del pago, accede a la transacción ZFii041 para la descarga del archivo generado y guarda los resultados; este flujo se ejecuta de manera iterativa para hasta 21 propuestas distintas (según banco y tipo de pago), aplicando configuraciones específicas por cada una, gestionando excepciones y finalmente notificando al usuario el resultado del proceso y las incidencias presentadas.
+
+Es un proceso de alta sensibilidad que gestiona entre 2,000 y 3,000 pagos diarios de diferentes áreas (Cesantías, Crédito, ABC). El robot ingresa a SAP, toma los pagos pendientes y genera automáticamente los archivos de giro formateados según el banco convenio correspondiente (existen nueve bancos). Anteriormente, generar estas propuestas de pago por banco tomaba más de una hora; con el robot, se realiza en aproximadamente 8 minutos para todos los bancos.";"GTE-TCC-02-2563
+GTE-TCC-02-3081
+GTE-TCC-02-3239
+GTE-TCC-02-3662
+GTE-TCC-02-3670
+GTE-TCC-02-3839
+GTE-TCC-02-3850
+GTE-TCC-02-4228
+GTE-TCC-02-4687
+
+Se ejecuta en equipos especiales de giro, los cuales están asignados a usuarios específicos con sus respectivas contraseñas. Hay tres funcionarios autorizados para realizar esta descarga.";"1. Datos financieros y contables: Propuestas de pago, sociedad (ej. 1000), cuentas contables,  clase de documento, identificador de propuesta generado por SAP, montos de pago, parámetros de ejecución.
+
+Consume datos de pagos masivos (montos, cuentas de destino), credenciales de acceso a SAP y parámetros específicos de formato requeridos por los nueve bancos convenio.";"Listas de excel
+Sap
+
+La fuente de información es el sistema SAP, utilizando la transacción ZFI060.";"Excel
+Sap
+
+Se integra con SAP para la generación de archivos y con un tercero llamado RSI, ya que el robot deposita los archivos resultantes en unas carpetas de transfer que son propiedad de dicha entidad. También tiene una etapa posterior de carga manual en los portales bancarios tras la validación de las áreas.";
+21;Relación de universidades y constructoras;2024;Tesorería;Gerencia de Tesoreria;Ana Sofia Quiroz Aponte;Aquiroz@fna.gov.co;SAP Excel Outlook;El proceso es de consulta de estado de giros a las entidades de acuerdo con las solicitudes que se hacen por correo, el cual se estandarizará para enviar las universidades con mayor recurrencia de esta información, se envía por medio de correo electrónico el archivo.;;;(Extraídos desde SAP y archivos de balance).;;;Duplicado con el 7
+26;Control de Cambios Giros SAP;2025;Comercial;Gerencia de Tesoreria;Ana Sofia Quiroz Aponte;Aquiroz@fna.gov.co;SAP;Control de cambios para ingresar información en proceso ZFII060 del aplicativo SAP;;;;;;"Duplicado con el 11
+
+26 es una mejora al 11"
+30;Informe diario legalizadora;2025;Legalizadora;Gerencia Legalizadora;Maria Adriana Nava Prada;ANava@fna.gov.co;Bizagi Excel Access;Generar y consolidar la información para el informe diario que se presenta a la gerencia;Lectura insumo, consulta en MS ACCES o ODBC de información, ingreso a Bizagi para descarga de reportes, ingreso a transfer para descarga de información de reportes, generación de informes;GCC-TCC-04-2970;Datos operativos;Listas de excel;"Excel
+Bizagi
+COBIS";Nota: Confirmar el estado de desarrollo del Bot
