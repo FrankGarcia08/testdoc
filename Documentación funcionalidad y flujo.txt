@@ -1,0 +1,61 @@
+Documentación funcionalidad y flujo RPA
+Proyecto - Fondo Nacional de Ahorro (FNA)
+
+1. Relación de universidades y constructoras
+
+-Área
+Tesorería, Gerencia de Tesorería
+
+- Funcionamiento
+El proceso es de consulta de estado de giros a las entidades de acuerdo con las solicitudes que se hacen por correo, el cual se estandarizará para enviar las universidades con mayor recurrencia de esta información, se envía por medio de correo electrónico el archivo.
+
+- Flujo
+Lectura insumo de pagos a consultar, ingreso a SAP, ingreso a transacción de consulta de giros, descarga estado de cuenta de cada constructora y universidad, organización y disposición del archivo para envío de estado de cuenta, envío de información a través de outlook.
+
+El robot descarga diariamente, a través de una transacción de SAP, todos los pagos realizados a universidades y constructoras el día hábil anterior. Posteriormente, filtra esta información por los correos electrónicos (principal y suplente) previamente establecidos y validados con seguridad de la información para cada entidad. Finalmente, utiliza una plantilla de mensajería para enviar automáticamente la relación de pagos adjunta a cada universidad. Este proceso evita que el personal de tesorería tenga que descargar manualmente órdenes de pago individuales, lo cual tomaba de 2 a 3 minutos por cada una.
+
+- Datos que consume
+Nit, nombre de entidad, correo
+Consume datos de pagos (registros financieros), direcciones de correo electrónico de contacto de las universidades y plantillas de texto para el cuerpo del mensaje.
+
+-Fuente de datos que consume
+Listas de excel - Sap
+La fuente principal es el sistema SAP, específicamente a través de la transacción ZF 039
+
+-Integraciones con otros sistemas
+Excel
+Sap
+Se integra con el sistema SAP para la extracción de datos y con el sistema de correo electrónico para la mensajería y envío de archivos.
+
+2. Descarga de archivos desde SAP - Control de Cambios Giros SAP
+
+-Área
+Tesorería, Gerencia de Tesorería
+
+- Funcionamiento
+
+El proceso consiste en la generación y descarga de los archivos de pagos (giros) desde SAP que se encuentran en estado aprobado presupuestado para su posterior cargue a los diferentes portales bancarios
+
+- Flujo
+
+La automatización Descarga de archivos de giros desde SAP, desarrollada en Agility Studio para el área de Tesorería del Fondo Nacional del Ahorro, tiene como objetivo ingresar al sistema SAP, parametrizar y ejecutar propuestas de pago (transacción F110 – Pagos Automáticos), generar los giros correspondientes y descargar los archivos resultantes para su posterior cargue en los portales bancarios. El proceso inicia cuando el usuario ejecuta el Menú Agility, ingresa credenciales y selecciona las propuestas a generar; posteriormente el RPA valida archivos de configuración, navega en SAP hasta el módulo de pagos automáticos, parametriza sociedad, vías de pago, cuentas de acreedores, criterios de selección (incluyendo clase de documento), configura determinación de bancos y jerarquía de sociedad pagadora, ejecuta la propuesta, valida su creación y estado, realiza la ejecución inmediata del pago, accede a la transacción ZFii041 para la descarga del archivo generado y guarda los resultados; este flujo se ejecuta de manera iterativa para hasta 21 propuestas distintas (según banco y tipo de pago), aplicando configuraciones específicas por cada una, gestionando excepciones y finalmente notificando al usuario el resultado del proceso y las incidencias presentadas.
+
+Es un proceso de alta sensibilidad que gestiona entre 2,000 y 3,000 pagos diarios de diferentes áreas (Cesantías, Crédito, ABC). El robot ingresa a SAP, toma los pagos pendientes y genera automáticamente los archivos de giro formateados según el banco convenio correspondiente (existen nueve bancos). Anteriormente, generar estas propuestas de pago por banco tomaba más de una hora; con el robot, se realiza en aproximadamente 8 minutos para todos los bancos.
+
+- Datos que consume
+
+1. Datos financieros y contables: Propuestas de pago, sociedad (ej. 1000), cuentas contables,  clase de documento, identificador de propuesta generado por SAP, montos de pago, parámetros de ejecución.
+
+Consume datos de pagos masivos (montos, cuentas de destino), credenciales de acceso a SAP y parámetros específicos de formato requeridos por los nueve bancos convenio.
+
+- Fuente de datos que consume
+
+Listas de excel
+Sap
+La fuente de información es el sistema SAP, utilizando la transacción ZFI060.
+
+-Integraciones con otros sistemas
+
+Excel
+Sap
+Se integra con SAP para la generación de archivos y con un tercero llamado RSI, ya que el robot deposita los archivos resultantes en unas carpetas de transfer que son propiedad de dicha entidad. También tiene una etapa posterior de carga manual en los portales bancarios tras la validación de las áreas.
